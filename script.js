@@ -34,3 +34,23 @@ document.addEventListener('keydown', (e) => {
         play();
     }
 });
+
+function play(){
+     function move(){
+         if(game_state != 'Play') return;
+ 
+         let pipe_sprite = document.querySelectorAll('.pipe_sprite');
+         pipe_sprite.forEach((element) => {
+             let pipe_sprite_props = element.getBoundingClientRect();
+             bird_props = bird.getBoundingClientRect();
+ 
+             if(pipe_sprite_props.right <= 0){
+                 element.remove();
+             }else{
+                 if(bird_props.left < pipe_sprite_props.left + pipe_sprite_props.width && bird_props.left + bird_props.width > pipe_sprite_props.left && bird_props.top < pipe_sprite_props.top + pipe_sprite_props.height && bird_props.top + bird_props.height > pipe_sprite_props.top){
+                     game_state = 'End';
+                     message.innerHTML = 'Game Over'.fontcolor('red') + '<br>Press Enter To Restart';
+                     message.classList.add('messageStyle');
+                     img.style.display = 'none';
+                     sound_die.play();
+                     return;
