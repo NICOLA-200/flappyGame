@@ -24,9 +24,13 @@ document.addEventListener('keydown', (e) => {
         document.querySelectorAll('.pipe_sprite').forEach((e) => {
             e.remove();
         });
-
-document.addEventListener("keydown", (e)=> {
-     if (e.key == "Enter && game_state != "Play") {
-          document.querySelectorAll(".pipe_sprite").
-     }
-})
+        img.style.display = 'block';
+        bird.style.top = '40vh';
+        game_state = 'Play';
+        message.innerHTML = '';
+        score_title.innerHTML = 'Score : ';
+        score_val.innerHTML = '0';
+        message.classList.remove('messageStyle');
+        play();
+    }
+});
