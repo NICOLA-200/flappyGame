@@ -63,3 +63,18 @@ function play(){
                      }
                  }
              });
+
+             requestAnimationFrame(move);
+          }
+          requestAnimationFrame(move);
+      
+          let bird_dy = 0;
+          function apply_gravity(){
+              if(game_state != 'Play') return;
+              bird_dy = bird_dy + grativy;
+              document.addEventListener('keydown', (e) => {
+                  if(e.key == 'ArrowUp' || e.key == ' '){
+                      img.src = 'images/Bird-2.png';
+                      bird_dy = -7.6;
+                  }
+              });
