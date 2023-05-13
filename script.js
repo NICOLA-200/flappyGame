@@ -121,3 +121,13 @@ function play(){
             pipe_sprite.style.top = pipe_posi + pipe_gap + 'vh';
             pipe_sprite.style.left = '100vw';
             pipe_sprite.increase_score = '1';
+
+
+            document.body.appendChild(pipe_sprite);
+          }
+          pipe_seperation++;
+          requestAnimationFrame(create_pipe);
+      }
+      requestAnimationFrame(create_pipe);
+  }
+  
